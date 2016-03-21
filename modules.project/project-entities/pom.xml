@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>modules.project</artifactId>
+        <groupId>cn.com.vixo.pms.project</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.vixo.pms.project.entities</groupId>
+    <artifactId>project-entities</artifactId>
+
+    <properties>
+        <bundle.symbolicName>cn.com.vixo.project.entities</bundle.symbolicName>
+        <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
+    </properties>
+
+    <name>PMS :: Projects - ENTITIES</name>
+    <description>Projects ENTITIES</description>
+    <packaging>bundle</packaging>
+
+</project>
