@@ -13,18 +13,39 @@
     <artifactId>modules.project</artifactId>
 
     <properties>
-        <bundle.symbolicName>cn.com.vixo.project.web</bundle.symbolicName>
+      <bundle.symbolicName>cn.com.vixo.project</bundle.symbolicName>
         <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
     </properties>
 
     <packaging>pom</packaging>
     <modules>
+        <module>project-api</module>
         <module>project-core</module>
         <module>project-dao</module>
         <module>project-entities</module>
+        <module>project-extjs</module>
         <module>project-rest</module>
         <module>project-web</module>
-        <module>project-api</module>
-        <module>project-extjs</module>
     </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.com.rexen.kalix.poms</groupId>
+                <artifactId>poms-dm</artifactId>
+                <version>${globle.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+        </dependency>
+    </dependencies>
 </project>

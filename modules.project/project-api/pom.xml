@@ -20,4 +20,16 @@
     <name>PMS :: Projects - API</name>
     <description>Projects API</description>
     <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.servicemix.specs</groupId>
+            <artifactId>org.apache.servicemix.specs.jsr339-api-m10</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.vixo.pms.project.entities</groupId>
+            <artifactId>project-entities</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

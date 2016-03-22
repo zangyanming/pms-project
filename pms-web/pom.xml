@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pms-project</artifactId>
+        <groupId>cn.com.vixo.pms</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.vixo.extjs.pms</groupId>
+    <artifactId>pms-web</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Extjs :: Pms - Web</name>
+    <description>Extjs -Pms - Web</description>
+    <packaging>bundle</packaging>
+
+    <properties>
+        <bundle.symbolicName>cn.com.vixo.extjs.pms</bundle.symbolicName>
+        <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.com.rexen.kalix.core</groupId>
+            <artifactId>core-api</artifactId>
+            <version>${globle.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.rexen.kalix.core</groupId>
+            <artifactId>core-util</artifactId>
+            <version>${globle.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.rexen.kalix.core</groupId>
+            <artifactId>core-impl</artifactId>
+            <version>${globle.version}</version>
+        </dependency>
+    </dependencies>
+</project>

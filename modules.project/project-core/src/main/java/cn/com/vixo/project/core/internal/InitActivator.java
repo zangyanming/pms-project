@@ -1,16 +1,18 @@
 package cn.com.vixo.project.core.internal;
 
 import cn.com.rexen.core.util.SystemUtil;
+import org.apache.log4j.Logger;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 /**
- * Created by zangyanming on 2016/3/21.
+ * Created by sunlf on 14-3-23.
  */
 public class InitActivator implements BundleActivator {
 
-    private static final String BUNDLE_NAME = " Pms Projects Core ";
+    private static final String BUNDLE_NAME = " Pms Project Core ";
     private static BundleContext context;
+    private static Logger logger = Logger.getLogger(InitActivator.class);
 
     @Override
     public void start(BundleContext bundleContext) throws Exception {

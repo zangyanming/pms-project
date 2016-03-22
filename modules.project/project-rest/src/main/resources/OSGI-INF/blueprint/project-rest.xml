@@ -17,31 +17,38 @@
             <description>project rest service</description>
 
             <!-- this is a rest GET to find all project -->
-            <get id="route-getAllDuty" outType="cn.com.rexen.core.api.persistence.JsonData">
-                <description>Find All Projects</description>
+            <get id="route-getAllProject" outType="cn.com.rexen.core.api.persistence.JsonData">
+                <description>Find all Projects</description>
                 <to uri="bean:projectService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr})"/>
             </get>
 
             <!-- this is a rest POST to create a project -->
-            <post id="route-addProject" type="cn.com.vixo.project.entities.ProjectsBean"
+            <post id="route-addProject" type="cn.com.vixo.project.entities.ProjectBean"
                   outType="cn.com.rexen.core.api.biz.JsonStatus">
-                <description>Create a Duty</description>
+                <description>Create a Project</description>
                 <to uri="bean:projectService?method=saveEntity"/>
             </post>
 
+            <!-- this is a rest GET to view a project by the given id -->
+            <get uri="/{id}" id="route-getProject" outType="cn.com.vixo.project.entities.ProjectBean">
+                <description>Find Project by id</description>
+                <to uri="bean:projectService?method=getEntity(${header.id})"/>
+            </get>
+
             <!-- this is a rest PUT to update a project -->
-            <put id="route-updateProjects" type="cn.com.rexen.duty.entities.ProjectsBean"
+            <put uri="/{id}" id="route-updateProject" type="cn.com.vixo.project.entities.ProjectBean"
                  outType="cn.com.rexen.core.api.biz.JsonStatus">
-                <description>Updates a Duty</description>
+                <description>Updates a Project</description>
                 <to uri="bean:projectService?method=updateEntity"/>
             </put>
 
             <!-- this is a rest DELETE to delete a project -->
             <delete uri="/{id}" id="route-deleteProject"
-                    outType="cn.com.rexen.core.api.biz.JsonStatus">
-                <description>Delete a Duty</description>
-                <to uri="bean:projectService?method=deleteDuty(${header.depId},${header.id})"/>
+                outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Delete a Project</description>
+                <to uri="bean:projectService?method=deleteEntity(${header.id})"/>
             </delete>
+
         </rest>
     </camelContext>
 </blueprint>

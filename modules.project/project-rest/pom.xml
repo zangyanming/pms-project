@@ -11,6 +11,19 @@
 
     <groupId>cn.com.vixo.pms.project.rest</groupId>
     <artifactId>project-rest</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>cn.com.rexen.kalix.poms</groupId>
+            <artifactId>poms-dm</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.vixo.pms.project.core</groupId>
+            <artifactId>project-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <bundle.symbolicName>cn.com.vixo.project.rest</bundle.symbolicName>

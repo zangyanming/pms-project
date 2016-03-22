@@ -9,15 +9,36 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.com.vixo.pms.project.dto</groupId>
-    <artifactId>project-dto</artifactId>
+    <groupId>cn.com.vixo.pms.project.dao</groupId>
+    <artifactId>project-dao</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>cn.com.vixo.pms.project.entities</groupId>
+            <artifactId>project-entities</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.vixo.pms.project.api</groupId>
+            <artifactId>project-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.rexen.kalix.core</groupId>
+            <artifactId>core-impl</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+        </dependency>
+    </dependencies>
 
     <properties>
         <bundle.symbolicName>cn.com.vixo.project.dao</bundle.symbolicName>
         <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
     </properties>
 
-    <name>PMS :: Projects - DTO</name>
-    <description>Projects DTO</description>
+    <name>PMS :: Projects - DAO</name>
+    <description>Projects DAO</description>
     <packaging>bundle</packaging>
 </project>

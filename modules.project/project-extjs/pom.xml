@@ -13,11 +13,18 @@
     <artifactId>project-extjs</artifactId>
 
     <properties>
-        <bundle.symbolicName>cn.com.vixo.project.api</bundle.symbolicName>
+        <bundle.symbolicName>cn.com.vixo.project.extjs</bundle.symbolicName>
         <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
     </properties>
 
     <name>PMS :: Projects - EXTJS</name>
     <description>Projects EXTJS</description>
     <packaging>bundle</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>cn.com.vixo.pms.project.core</groupId>
+            <artifactId>project-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

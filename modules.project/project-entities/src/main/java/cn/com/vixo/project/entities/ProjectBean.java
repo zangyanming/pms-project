@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
 
+
 /**
  * @类描述：项目管理
  * @创建人：zangyanming
@@ -16,7 +17,7 @@ import java.util.Date;
  * @修改备注：
  */
 @Entity
-@Table(name = "project_projects")
+@Table(name = "project_project")
 public class ProjectBean extends PersistentEntity {
 
     /**
