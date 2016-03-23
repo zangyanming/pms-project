@@ -43,7 +43,7 @@ public class PmsApplicationImpl implements IApplication {
 
     @Override
     public int getIndex() {
-        return 0;
+        return 2;
     }
 
     @Override

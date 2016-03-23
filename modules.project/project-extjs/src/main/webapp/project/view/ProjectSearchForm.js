@@ -21,7 +21,7 @@ Ext.define('kalix.pms.project.view.ProjectSearchForm', {
 			xtype: 'textfield',
 			fieldLabel: '项目负责人',
 			labelAlign: 'right',
-			labelWidth: 60,
+			labelWidth: 80,
 			width: 200,
 			name: 'manager'
 		},
@@ -29,7 +29,7 @@ Ext.define('kalix.pms.project.view.ProjectSearchForm', {
     		xtype: 'textfield',
     		fieldLabel: '项目投资方',
     		labelAlign: 'right',
-    		labelWidth: 60,
+    		labelWidth: 80,
     		width: 200,
     		name: 'investor'
     	}

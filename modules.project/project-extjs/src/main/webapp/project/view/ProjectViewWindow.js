@@ -28,13 +28,6 @@ Ext.define('kalix.pms.project.view.ProjectViewWindow', {
                 }
             },
             {
-                fieldLabel: '项目描述',
-                allowBlank: false,
-                bind: {
-                    value: '{rec.description}'
-                }
-            },
-            {
                 fieldLabel: '项目主页',
                 allowBlank: false,
                 bind: {

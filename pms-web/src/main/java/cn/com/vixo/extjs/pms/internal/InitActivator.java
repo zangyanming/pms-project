@@ -24,7 +24,6 @@ public class InitActivator extends KalixBundleActivator {
         httpService = (HttpService) bundleContext.getService(reference);
         httpService.registerResources(contextPath + "/app/pms", "/pms", null);
         httpService.registerResources(contextPath + "/pms/resources/images", "/resources/images", null);
-        SystemUtil.succeedPrintln("path:"+contextPath);
     }
 
     @Override

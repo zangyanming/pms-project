@@ -15,7 +15,6 @@
     <description>Parent of Pms</description>
     <modules>
         <module>modules.project</module>
-        <module>pms</module>
         <module>pms-web</module>
     </modules>
 </project>

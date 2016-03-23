@@ -17,8 +17,8 @@ Ext.define('kalix.pms.project.viewModel.ProjectViewModel', {
         view_title: '查看项目',
         add_title: '添加项目',
         edit_title: '修改项目',
-        add_image_path: '/pms/app/project/resources/images/project_add.png',
-        view_image_path: '/pms/app/project/resources/images/project_view.png',
-        edit_image_path: '/pms/app/project/resources/images/project_edit.png',
+        add_image_path: '/kalix/app/pms/project/resources/images/project_add.png',
+        view_image_path: '/kalix/app/pms/project/resources/images/project_view.png',
+        edit_image_path: '/kalix/app/pms/project/resources/images/project_edit.png',
     }
 });
