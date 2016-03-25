@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+    <reference id="standardService" interface="cn.com.vixo.standard.api.biz.IStandardBeanService"/>
+
+    <camelContext id="standardCamel" xmlns="http://camel.apache.org/schema/blueprint">
+
+        <restConfiguration component="servlet" bindingMode="json">
+            <dataFormatProperty key="prettyPrint" value="true"/>
+        </restConfiguration>
+
+        <!-- defines the rest services using the context-path /standard -->
+        <rest path="/standards" consumes="application/json;charset=utf-8" produces="application/json;charset=utf-8">
+            <description>standard rest service</description>
+
+            <!-- this is a rest GET to find all standard -->
+            <get id="route-getAllStandard" outType="cn.com.rexen.core.api.persistence.JsonData">
+                <description>Find all Standards</description>
+                <to uri="bean:standardService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr})"/>
+            </get>
+
+            <!-- this is a rest POST to create a standard -->
+            <post id="route-addStandard" type="cn.com.vixo.standard.entities.StandardBean"
+                  outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Create a Standard</description>
+                <to uri="bean:standardService?method=saveEntity"/>
+            </post>
+
+            <!-- this is a rest GET to view a standard by the given id -->
+            <get uri="/{id}" id="route-getStandard" outType="cn.com.vixo.standard.entities.StandardBean">
+                <description>Find Standard by id</description>
+                <to uri="bean:standardService?method=getEntity(${header.id})"/>
+            </get>
+
+            <!-- this is a rest PUT to update a standard -->
+            <put uri="/{id}" id="route-updateStandard" type="cn.com.vixo.standard.entities.StandardBean"
+                 outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Updates a Standard</description>
+                <to uri="bean:standardService?method=updateEntity"/>
+            </put>
+
+            <!-- this is a rest DELETE to delete a standard -->
+            <delete uri="/{id}" id="route-deleteStandard"
+                outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Delete a Standard</description>
+                <to uri="bean:standardService?method=deleteEntity(${header.id})"/>
+            </delete>
+
+        </rest>
+    </camelContext>
+</blueprint>

@@ -1,0 +1,16 @@
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+">
+
+    <service id="standardBeanService" interface="cn.com.vixo.standard.api.biz.IStandardBeanService"
+             ref="beanServiceImpl">
+    </service>
+
+    <bean id="beanServiceImpl" class="cn.com.vixo.standard.core.biz.StandardBeanServiceImpl">
+        <property name="dao" ref="standardBeanDao"/>
+    </bean>
+
+    <reference id="standardBeanDao" interface="cn.com.vixo.standard.api.dao.IStandardBeanDao"/>
+</blueprint>
+

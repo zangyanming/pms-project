@@ -16,5 +16,6 @@
     <modules>
         <module>modules.project</module>
         <module>pms-web</module>
+        <module>modules.standard</module>
     </modules>
 </project>
