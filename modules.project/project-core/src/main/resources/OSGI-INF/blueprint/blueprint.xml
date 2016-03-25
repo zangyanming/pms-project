@@ -9,8 +9,10 @@
 
     <bean id="beanServiceImpl" class="cn.com.vixo.project.core.biz.ProjectBeanServiceImpl">
         <property name="dao" ref="projectBeanDao"/>
+        <property name="shiroService" ref="shiroService"/>
     </bean>
 
     <reference id="projectBeanDao" interface="cn.com.vixo.project.api.dao.IProjectBeanDao"/>
+    <reference id="shiroService" interface="cn.com.rexen.core.api.security.IShiroService"/>
 </blueprint>
 

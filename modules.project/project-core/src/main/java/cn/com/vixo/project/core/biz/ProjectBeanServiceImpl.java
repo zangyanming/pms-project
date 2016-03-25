@@ -1,7 +1,7 @@
 package cn.com.vixo.project.core.biz;
 
 import cn.com.rexen.core.api.biz.JsonStatus;
-import cn.com.rexen.core.impl.biz.GenericBizServiceImpl;
+import cn.com.rexen.core.impl.biz.ShiroGenericBizServiceImpl;
 import cn.com.vixo.project.api.biz.IProjectBeanService;
 import cn.com.vixo.project.api.dao.IProjectBeanDao;
 import cn.com.vixo.project.entities.ProjectBean;
@@ -14,7 +14,7 @@ import cn.com.vixo.project.entities.ProjectBean;
  * @修改时间：
  * @修改备注：
  */
-public class ProjectBeanServiceImpl extends GenericBizServiceImpl<IProjectBeanDao, ProjectBean> implements IProjectBeanService {
+public class ProjectBeanServiceImpl extends ShiroGenericBizServiceImpl<IProjectBeanDao, ProjectBean> implements IProjectBeanService {
     private JsonStatus jsonStatus = new JsonStatus();
 
     public ProjectBeanServiceImpl() {
