@@ -7,7 +7,7 @@ Ext.define('kalix.pms.project.view.ProjectGrid', {
     extend: 'kalix.view.components.common.BaseGrid',
     requires: [
         'kalix.pms.project.controller.ProjectGridController',
-        'kalix.pms.project.store.ProjectStore',
+        'kalix.pms.project.store.ProjectStore'
     ],
     alias: 'widget.projectGrid',
     xtype: 'projectGridPanel',
@@ -37,12 +37,16 @@ Ext.define('kalix.pms.project.view.ProjectGrid', {
             {
                 text: '编号',
                 dataIndex: 'id',
-                hidden: true,
+                hidden: true
             },
-			{
-				text: '项目名称',
-				dataIndex: 'projectName'
-			},
+            {
+                text: '项目名称',
+                dataIndex: 'projectName'
+            },
+            {
+                text: '项目标识',
+                dataIndex: 'identifier'
+            },
 			{
 				text: '项目负责人',
 				dataIndex: 'manager'
@@ -52,20 +56,8 @@ Ext.define('kalix.pms.project.view.ProjectGrid', {
 				dataIndex: 'investor'
 			},
 			{
-				text: '投资金额',
-				dataIndex: 'investmentMoney'
-			},
-			{
 				text: '项目客户',
 				dataIndex: 'customer'
-			},
-			{
-				text: '项目级别',
-				dataIndex: 'projectLevel'
-			},
-			{
-				text: '项目状态',
-				dataIndex: 'status'
 			},
 			{
 				xtype: 'securityGridColumnRUD',

@@ -27,6 +27,12 @@ public class ProjectBean extends PersistentEntity {
     private String projectName;
 
     /**
+     * @describe 项目标识
+     * @validator 不能为空
+     */
+    private String identifier;
+
+    /**
      * @describe 项目描述
      */
     private String description;
@@ -36,11 +42,7 @@ public class ProjectBean extends PersistentEntity {
      */
     private String homepage;
 
-    /**
-     * @describe 项目标识
-     * @validator 不能为空
-     */
-    private Integer identifier;
+
 
     /**
      * @describe 项目状态
@@ -80,7 +82,7 @@ public class ProjectBean extends PersistentEntity {
     private int projectLevel;
 
     /**
-     * @describe 项目优先级
+     * @describe 项目紧急程度
      * @validator 不能为空
      */
     private int priority;
@@ -100,7 +102,7 @@ public class ProjectBean extends PersistentEntity {
     /**
      * @describe 项目当前阶段
      */
-    private int stage;
+    private String stage;
 
     /**
      * @describe 项目客户
@@ -174,6 +176,25 @@ public class ProjectBean extends PersistentEntity {
      */
     private String imgSrc;
 
+    /**
+     * @describe 结构、画面长度比例
+     */
+    private String frameRatio;
+
+    /**
+     * @describe 结构、画面长度比例
+     */
+    private String frameRatioWidth;
+
+    /**
+     * @describe 结构、画面高度比例
+     */
+    private String frameRatioHeight;
+
+    /**
+     * @describe 分辨率
+     */
+    private String resolution;
 
     public String getProjectName() {
         return projectName;
@@ -181,6 +202,14 @@ public class ProjectBean extends PersistentEntity {
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     public String getDescription() {
@@ -197,14 +226,6 @@ public class ProjectBean extends PersistentEntity {
 
     public void setHomepage(String homepage) {
         this.homepage = homepage;
-    }
-
-    public Integer getIdentifier() {
-        return identifier;
-    }
-
-    public void setIdentifier(Integer identifier) {
-        this.identifier = identifier;
     }
 
     public int getStatus() {
@@ -279,11 +300,11 @@ public class ProjectBean extends PersistentEntity {
         this.budget = budget;
     }
 
-    public int getStage() {
+    public String getStage() {
         return stage;
     }
 
-    public void setStage(int stage) {
+    public void setStage(String stage) {
         this.stage = stage;
     }
 
@@ -397,5 +418,37 @@ public class ProjectBean extends PersistentEntity {
 
     public void setImgSrc(String imgSrc) {
         this.imgSrc = imgSrc;
+    }
+
+    public String getFrameRatio() {
+        return frameRatio;
+    }
+
+    public void setFrameRatio(String frameRatio) {
+        this.frameRatio = frameRatio;
+    }
+
+    public String getFrameRatioWidth() {
+        return frameRatioWidth;
+    }
+
+    public void setFrameRatioWidth(String frameRatioWidth) {
+        this.frameRatioWidth = frameRatioWidth;
+    }
+
+    public String getFrameRatioHeight() {
+        return frameRatioHeight;
+    }
+
+    public void setFrameRatioHeight(String frameRatioHeight) {
+        this.frameRatioHeight = frameRatioHeight;
+    }
+
+    public String getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
     }
 }

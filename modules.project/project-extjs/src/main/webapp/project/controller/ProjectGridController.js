@@ -6,6 +6,6 @@
  */
 Ext.define('kalix.pms.project.controller.ProjectGridController', {
     extend: 'kalix.controller.BaseGridController',
-    alias: 'controller.projectGridController',
-
+    requires: ['kalix.core.Notify'],
+    alias: 'controller.projectGridController'
 });

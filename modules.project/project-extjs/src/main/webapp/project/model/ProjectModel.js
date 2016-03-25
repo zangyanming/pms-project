@@ -17,8 +17,7 @@ Ext.define('kalix.pms.project.model.ProjectModel', {
             validators: [{type: 'presence'}]
         }, {
             name: 'identifier',
-            type: 'int',
-            defaultValue: 0,
+            type: 'string',
             validators: [{type: 'presence'}]
         }, {
             name: 'status',
@@ -58,8 +57,7 @@ Ext.define('kalix.pms.project.model.ProjectModel', {
             name: 'budget'
         }, {
             name: 'stage',
-            type: 'int',
-            defaultValue: 0
+            type: 'string'
         }, {
             name: 'customer',
             type: 'string'
@@ -110,6 +108,22 @@ Ext.define('kalix.pms.project.model.ProjectModel', {
             name: 'homepage',
             type: 'string'
         },
+        {
+            name: 'frameRatio',
+            type: 'string'
+        },
+        {
+            name: 'frameRatioWidth',
+            type: 'string'
+        },
+        {
+            name: 'frameRatioHeight',
+            type: 'string'
+        },
+        {
+            name: 'resolution',
+            type: 'string'
+        }
     ]
     //,
     //todo 在此修改模型验证提示信息
