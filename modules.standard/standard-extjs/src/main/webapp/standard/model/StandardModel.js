@@ -6,7 +6,7 @@
  */
 
 
-Ext.define('vixo.app.standard.model.StandardModel', {
+Ext.define('kalix.pms.standard.model.StandardModel', {
     extend: 'kalix.model.BaseModel',
 
     //todo 在此修改模型定义

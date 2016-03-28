@@ -5,10 +5,10 @@
  * @version 1.0.0
  */
 
-Ext.define('vixo.app.standard.view.StandardViewWindow', {
+Ext.define('kalix.pms.standard.view.StandardViewWindow', {
     extend: 'kalix.view.components.common.BaseWindow',
         requires: [
-            'vixo.app.standard.viewModel.StandardViewModel',
+            'kalix.pms.standard.viewModel.StandardViewModel',
             'kalix.admin.user.store.UserStore'
         ],
         alias: 'widget.standardViewWindow',

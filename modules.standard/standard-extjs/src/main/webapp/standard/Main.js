@@ -4,12 +4,12 @@
  * @author
  * @version 1.0.0
  */
-Ext.define('vixo.app.standard.Main', {
+Ext.define('kalix.pms.standard.Main', {
     extend: 'kalix.container.BaseContainer',
     requires: [
-        'vixo.app.standard.view.StandardGrid',
-        'vixo.app.standard.view.StandardSearchForm',
-        'vixo.app.standard.viewModel.StandardViewModel'
+        'kalix.pms.standard.view.StandardGrid',
+        'kalix.pms.standard.view.StandardSearchForm',
+        'kalix.pms.standard.viewModel.StandardViewModel'
     ],
     storeId: 'standardStore',
     viewModel: 'standardViewModel',

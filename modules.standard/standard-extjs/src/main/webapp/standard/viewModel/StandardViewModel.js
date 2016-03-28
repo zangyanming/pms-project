@@ -5,7 +5,7 @@
  * @version 1.0.0
  */
 
-Ext.define('vixo.app.standard.viewModel.StandardViewModel', {
+Ext.define('kalix.pms.standard.viewModel.StandardViewModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.standardViewModel',
     data: {

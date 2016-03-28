@@ -4,9 +4,9 @@
  * @author
  * @version 1.0.0
  */
-Ext.define('vixo.app.standard.store.StandardStore', {
+Ext.define('kalix.pms.standard.store.StandardStore', {
     extend: 'kalix.store.BaseStore',
-    model: 'vixo.app.standard.model.StandardModel',
+    model: 'kalix.pms.standard.model.StandardModel',
     alias: 'store.standardStore',
     xtype: 'standardStore',
     storeId: "standardStore",

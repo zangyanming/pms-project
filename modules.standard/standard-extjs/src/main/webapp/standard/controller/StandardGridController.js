@@ -4,8 +4,7 @@
  * @author
  * @version 1.0.0
  */
-Ext.define('vixo.app.standard.controller.StandardGridController', {
+Ext.define('kalix.pms.standard.controller.StandardGridController', {
     extend: 'kalix.controller.BaseGridController',
-    alias: 'controller.standardGridController',
-
+    alias: 'controller.standardGridController'
 });

@@ -12,10 +12,7 @@ import org.osgi.service.http.HttpService;
 public class InitActivator extends KalixBundleActivator {
 
     private static final String BUNDLE_NAME = " Pms Standard Extjs ";
-    public static final String KALIX_APP_ROFFICE_PATH = "/kalix/app/app/standard";
-    public static final String KALIX_ROFFICE_RESOURCES_IMAGES = "/kalix/app/standard/resources/images";
     private static BundleContext context;
-    private static Logger logger = Logger.getLogger(InitActivator.class);
     private ServiceReference reference;
     private HttpService httpService;
 
@@ -23,11 +20,12 @@ public class InitActivator extends KalixBundleActivator {
     public void start(BundleContext bundleContext) throws Exception {
         SystemUtil.succeedPrintln(String.format("Start-up %s bundle!!", BUNDLE_NAME) + bundleContext.getBundle());
         context = bundleContext;
+        //SystemUtil.succeedPrintln(contextPath); // '/kalix'
 
         reference = bundleContext.getServiceReference(HttpService.class.getName());
         httpService = (HttpService) bundleContext.getService(reference);
-        httpService.registerResources(KALIX_APP_ROFFICE_PATH, "/kalix/standard", null);
-        httpService.registerResources(KALIX_ROFFICE_RESOURCES_IMAGES, "/resources/images", null);
+        httpService.registerResources(contextPath + "/app/pms/standard", "/standard", null);
+        httpService.registerResources(contextPath +"/app/pms/standard/resources/images", "/resources/images", null);
     }
 
     @Override
@@ -35,10 +33,10 @@ public class InitActivator extends KalixBundleActivator {
         SystemUtil.succeedPrintln(String.format("Stop %s bundle!!", BUNDLE_NAME) + bundleContext.getBundle());
         context = null;
         if(httpService!=null){
-            httpService.unregister(KALIX_APP_ROFFICE_PATH);
-            httpService.unregister(KALIX_ROFFICE_RESOURCES_IMAGES);
+            httpService.unregister(contextPath +"/app/pms/standard");
+            httpService.unregister(contextPath +"/app/pms/standard/resources/images");
         }
         if (reference != null)
-                    bundleContext.ungetService(reference);
+            bundleContext.ungetService(reference);
     }
 }

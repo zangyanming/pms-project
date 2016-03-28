@@ -60,12 +60,42 @@ Ext.define('kalix.pms.project.view.ProjectGrid', {
 				dataIndex: 'customer'
 			},
 			{
-				xtype: 'securityGridColumnRUD',
-				//todo change permission
-				permissions: [
-					'pms:projectModule:projectMenu:view',
-					'pms:projectModule:projectMenu:edit',
-					'pms:projectModule:projectMenu:delete'
+                xtype: 'securityGridColumnCommon',
+                items: [
+                    {
+                        icon: "resources/images/read.png",
+                        permission: '',
+                        tooltip: '查看',
+                        handler: 'onView'
+                    },
+                    {
+                        icon: "resources/images/edit.png",
+                        permission: '',
+                        tooltip: '编辑',
+                        handler: 'onEdit',
+                        getClass: function (v, meta, record) {
+                            if (0 != record.data.status) {
+                                return "kalix_hidden";
+                            }
+                        }
+                    },
+                    {
+                        icon: "resources/images/delete.png",
+                        permission: '',
+                        tooltip: '删除',
+                        handler: 'onDelete',
+                        getClass: function (v, meta, record) {
+                            if (0 != record.data.status) {
+                                return "kalix_hidden";
+                            }
+                        }
+                    },
+                    {
+                        icon: "attachment/resources/images/attachment_manage.png",
+                        permission: '',
+                        tooltip: '项目规范',
+                        handler: 'onAttachmentManage'
+                    }
 				]
 			}
         ]

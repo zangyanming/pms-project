@@ -3,20 +3,20 @@
  * @author
  * @version 1.0.0
  */
-Ext.define('vixo.app.standard.view.StandardGrid', {
+Ext.define('kalix.pms.standard.view.StandardGrid', {
     extend: 'kalix.view.components.common.BaseGrid',
     requires: [
-        'vixo.app.standard.controller.StandardGridController',
-        'vixo.app.standard.store.StandardStore',
+        'kalix.pms.standard.controller.StandardGridController',
+        'kalix.pms.standard.store.StandardStore',
     ],
     alias: 'widget.standardGrid',
     xtype: 'standardGridPanel',
     controller: {
         type: 'standardGridController',
         storeId: 'standardStore',
-        cfgForm: 'vixo.app.standard.view.StandardWindow',
-        cfgViewForm: 'vixo.app.standard.view.StandardViewWindow',
-        cfgModel: 'vixo.app.standard.model.StandardModel'
+        cfgForm: 'kalix.pms.standard.view.StandardWindow',
+        cfgViewForm: 'kalix.pms.standard.view.StandardViewWindow',
+        cfgModel: 'kalix.pms.standard.model.StandardModel'
     },
     store: {
         type: 'standardStore'

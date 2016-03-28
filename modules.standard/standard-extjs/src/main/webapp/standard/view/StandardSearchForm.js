@@ -3,7 +3,7 @@
  * @author
  * @version 1.0.0
  */
-Ext.define('vixo.app.standard.view.StandardSearchForm', {
+Ext.define('kalix.pms.standard.view.StandardSearchForm', {
     extend: 'kalix.view.components.common.BaseSearchForm',
     alias: 'widget.standardSearchForm',
     xtype: 'standardSearchForm',
