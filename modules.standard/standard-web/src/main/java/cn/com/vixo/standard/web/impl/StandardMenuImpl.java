@@ -51,7 +51,7 @@ public class StandardMenuImpl implements IMenu {
 
         @Override
         public String getRouteId() {
-            return "pms/project";
+            return "pms/standard";
         }
 
         @Override
