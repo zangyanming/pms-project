@@ -7,66 +7,43 @@
 Ext.define('kalix.pms.standard.view.StandardWindow', {
     extend: 'kalix.view.components.common.BaseWindow',
     requires: [
-        'kalix.pms.standard.viewModel.StandardViewModel',
-        'kalix.controller.BaseWindowController'
+		'kalix.controller.BaseWindowController',
+		'kalix.pms.standard.viewModel.StandardViewModel',
+		'kalix.pms.standard.view.StandardGrid',
+		'kalix.pms.standard.view.StandardForm'
+
     ],
     alias: 'widget.standardWindow',
-    viewModel: 'standardViewModel',
-    controller: {
+	xtype: "standardWindow",
+	viewModel: 'standardViewModel',
+	controller: {
         type: 'baseWindowController',
         storeId: 'standardStore'
     },
-    xtype: "standardWindow",
-    width: 400,
+	layout:'container',
+	defualt:{},
+	height:550,
+    //width: 400,
     //todo 在此修改表单
     items: [
+		{
+			xtype:'standardGrid'
+		}
+    ],
+	listeners: {
+		beforeshow: function () {
+			var store = this.items.getAt(0).store;
+			var mainId = this.getViewModel().get('rec').id;
+			//var projectId = this.getViewModel().get('rec').projectId;
 
-        {
-        xtype: 'baseForm',
-        items: [
-            	{
-            		fieldLabel: '项目主键id',
-            		allowBlank: false,
-            		bind: {
-            			value: '{rec.projectId}'
-            		}
-            	},
-            	{
-            		fieldLabel: '文件名',
-            		allowBlank: false,
-            		bind: {
-            			value: '{rec.fileName}'
-            		}
-            	},
-            	{
-            		fieldLabel: '文件路径',
-            		allowBlank: false,
-            		bind: {
-            			value: '{rec.filePath}'
-            		}
-            	},
-            	{
-            		fieldLabel: '文件描述',
-            		allowBlank: false,
-            		bind: {
-            			value: '{rec.description}'
-            		}
-            	},
-            	{
-            		fieldLabel: '文件大小',
-            		allowBlank: false,
-            		bind: {
-            			value: '{rec.fileSize}'
-            		}
-            	},
-            	{
-            		fieldLabel: '文件类型',
-            		allowBlank: false,
-            		bind: {
-            			value: '{rec.fileType}'
-            		}
-            	}
-        ]
-        }
-    ]
+			store.on('load', function (target, records, successful, eOpts) {
+				//records.forEach(function(item) {
+				//item.set('fileSize', item.get('fileSize') / 1048576);
+				//});
+			});
+
+			store.proxy.extraParams = {jsonStr: '{projectId:' + mainId +'}'}
+			store.load();
+		}
+	}
 });

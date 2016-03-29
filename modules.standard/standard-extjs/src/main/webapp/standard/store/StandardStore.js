@@ -6,9 +6,10 @@
  */
 Ext.define('kalix.pms.standard.store.StandardStore', {
     extend: 'kalix.store.BaseStore',
-    model: 'kalix.pms.standard.model.StandardModel',
     alias: 'store.standardStore',
     xtype: 'standardStore',
+    model: 'kalix.pms.standard.model.StandardModel',
+    autoLoad:false,
     storeId: "standardStore",
     proxyUrl: '/kalix/camel/rest/standards'
 });

@@ -11,14 +11,14 @@ Ext.define('kalix.pms.standard.viewModel.StandardViewModel', {
     data: {
         rec: null,
         validation: {},  //验证错误信息
-        icon: '',
-        title: '',
-        view_operation: false,
-        view_title: '查看项目规范',
-        add_title: '添加项目规范',
-        edit_title: '修改项目规范',
-        add_image_path: '/kalix/app/standard/resources/images/standard_add.png',
-        view_image_path: '/kalix/app/standard/resources/images/standard_view.png',
-        edit_image_path: '/kalix/app/standard/resources/images/standard_edit.png',
+        icon: '/kalix/app/pms/standard/resources/images/standard_manage.png',
+        title: '项目规范',
+        view_operation: true,
+        view_title: '',
+        add_title: '',
+        edit_title: '',
+        add_image_path: '/kalix/app/pms/standard/resources/images/standard_add.png',
+        view_image_path: '',
+        edit_image_path: ''
     }
 });

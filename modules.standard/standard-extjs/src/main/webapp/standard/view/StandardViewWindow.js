@@ -21,7 +21,7 @@ Ext.define('kalix.pms.standard.view.StandardViewWindow', {
             xtype: 'baseForm',
             items: [
                 	{
-                		fieldLabel: '项目主键id',
+                		fieldLabel: '项目名称',
                 		allowBlank: false,
                 		bind: {
                 			value: '{rec.projectId}'

@@ -7,6 +7,7 @@
 Ext.define('kalix.pms.standard.Main', {
     extend: 'kalix.container.BaseContainer',
     requires: [
+        'kalix.pms.project.view.ProjectGrid',
         'kalix.pms.standard.view.StandardGrid',
         'kalix.pms.standard.view.StandardSearchForm',
         'kalix.pms.standard.viewModel.StandardViewModel'
@@ -18,9 +19,10 @@ Ext.define('kalix.pms.standard.Main', {
             title: '项目规范查询',
             iconCls: 'x-fa fa-search',
             xtype: 'standardSearchForm'
-        }, {
-            xtype: 'standardGridPanel',
-            id: 'standardGridPanel',
+        },
+        {
+            xtype: 'standardGrid',
+            id: 'standardGrid',
             title: '项目规范列表',
             iconCls: 'x-fa fa-search',
             margin: 10
