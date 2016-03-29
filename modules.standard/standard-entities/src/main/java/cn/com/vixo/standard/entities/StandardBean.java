@@ -1,12 +1,9 @@
 package cn.com.vixo.standard.entities;
 
 import cn.com.rexen.core.api.persistence.PersistentEntity;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 /**
  * @类描述：
@@ -16,81 +13,104 @@ import java.util.Date;
  * @修改时间：
  * @修改备注：
  */
- //todo 修改模型定义
+//todo 修改模型定义
 @Entity
-@Table(name = "Pms_standard")
+@Table(name = "pms_standard")
 public class StandardBean extends PersistentEntity {
-    	/**
-    	*@describe 项目主键id
-    	*/
-    	private String projectId;
-    	public String getProjectId(){
-    		return this.projectId;
-    	}
+    /**
+     * @describe 项目主键id
+     */
+    private int projectId;
+    /**
+     * @describe couchdb中的附件id
+     */
+    private String fileId;
+    /**
+     * @describe couchdb中的附件版本号
+     */
+    private String fileRev;
+    /**
+     * @describe 文件名
+     */
+    private String fileName;
+    /**
+     * @describe 文件类型
+     */
+    private String fileType;
+    /**
+     * @describe 文件大小
+     */
+    private String fileSize;
+    /**
+     * @describe 文件路径
+     */
+    private String filePath;
+    /**
+     * @describe 文件描述
+     */
+    private String description;
 
-    	public void setProjectId(String projectId) {
-    		this.projectId = projectId;
-    	}
+    public int getProjectId() {
+        return projectId;
+    }
 
-    	/**
-    	*@describe 文件名
-    	*/
-    	private String fileName;
-    	public String getFileName(){
-    		return this.fileName;
-    	}
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
+    }
 
-    	public void setFileName(String fileName) {
-    		this.fileName = fileName;
-    	}
+    public String getFileId() {
+        return fileId;
+    }
 
-    	/**
-    	*@describe 文件路径
-    	*/
-    	private String filePath;
-    	public String getFilePath(){
-    		return this.filePath;
-    	}
+    public void setFileId(String fileId) {
+        this.fileId = fileId;
+    }
 
-    	public void setFilePath(String filePath) {
-    		this.filePath = filePath;
-    	}
+    public String getFileRev() {
+        return fileRev;
+    }
 
-    	/**
-    	*@describe 文件描述
-    	*/
-    	private String description;
-    	public String getDescription(){
-    		return this.description;
-    	}
+    public void setFileRev(String fileRev) {
+        this.fileRev = fileRev;
+    }
 
-    	public void setDescription(String description) {
-    		this.description = description;
-    	}
+    public String getFileName() {
+        return fileName;
+    }
 
-    	/**
-    	*@describe 文件大小
-    	*/
-    	private String fileSize;
-    	public String getFileSize(){
-    		return this.fileSize;
-    	}
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-    	public void setFileSize(String fileSize) {
-    		this.fileSize = fileSize;
-    	}
+    public String getFileType() {
+        return fileType;
+    }
 
-    	/**
-    	*@describe 文件类型
-    	*/
-    	private String fileType;
-    	public String getFileType(){
-    		return this.fileType;
-    	}
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
 
-    	public void setFileType(String fileType) {
-    		this.fileType = fileType;
-    	}
+    public String getFileSize() {
+        return fileSize;
+    }
 
+    public void setFileSize(String fileSize) {
+        this.fileSize = fileSize;
+    }
 
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
