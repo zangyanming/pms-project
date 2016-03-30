@@ -17,7 +17,7 @@ import java.util.Date;
  * @修改备注：
  */
 @Entity
-@Table(name = "project_project")
+@Table(name = "pms_project")
 public class ProjectBean extends PersistentEntity {
 
     /**

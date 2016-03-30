@@ -14,8 +14,9 @@
     <packaging>pom</packaging>
     <description>Parent of Pms</description>
     <modules>
-        <module>modules.project</module>
         <module>pms-web</module>
+        <module>modules.project</module>
         <module>modules.standard</module>
+        <module>modules.group</module>
     </modules>
 </project>

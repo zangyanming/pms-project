@@ -39,7 +39,7 @@ Ext.define('kalix.pms.standard.view.StandardGrid', {
             {
                 text: '编号',
                 dataIndex: 'id',
-                hidden: true,
+                hidden: true
             },
             //{
             //    text: '项目主键id',

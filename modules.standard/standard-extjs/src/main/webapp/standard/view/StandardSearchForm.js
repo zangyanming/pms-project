@@ -19,5 +19,4 @@ Ext.define('kalix.pms.standard.view.StandardSearchForm', {
 			name:'projectId'
     	}
     ]
-
 });
