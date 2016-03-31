@@ -49,6 +49,23 @@
                 <to uri="bean:groupService?method=deleteEntity(${header.id})"/>
             </delete>
 
+            <!-- this is a rest GET to view an user by the given id -->
+            <get id="route-getUsersByGroupId" uri="/groupUsers/users/{groupId}" outType="java.util.List">
+                <description>Find users by group Id</description>
+                <to uri="bean:groupService?method=getUsersByGroupId(${header.groupId})"/>
+            </get>
+
+            <!-- this is a rest GET to view an user by the given id -->
+            <get id="route-getUserAllAndGroupUsers" uri="/groupUsers/users/all/{groupId}" outType="java.util.List">
+                <description>Find users by group Id</description>
+                <to uri="bean:groupService?method=getUserAllAndGroupUsers(${header.groupId})"/>
+            </get>
+
+            <!-- this is a rest GET to save users by the given id -->
+            <get id="route-saveGroupUsers" uri="/groupUsers" outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>save groupUsers</description>
+                <to uri="bean:groupService?method=saveGroupUsers(${header.groupId},${header.userIds})"/>
+            </get>
         </rest>
     </camelContext>
 </blueprint>

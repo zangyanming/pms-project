@@ -47,13 +47,34 @@ Ext.define('kalix.pms.group.view.GroupGrid', {
             //    text: '组管理者',
             //    dataIndex: 'userId'
             //},
+            //{
+            //    xtype: 'securityGridColumnRUD',
+            //    //todo change permission
+            //    permissions: [
+            //        'admin:constructModule:groupMenu:view',
+            //        'admin:constructModule:groupMenu:edit',
+            //        'admin:constructModule:groupMenu:delete'
+            //    ]
+            //}
             {
-                xtype: 'securityGridColumnRUD',
-                //todo change permission
-                permissions: [
-                    'admin:constructModule:groupMenu:view',
-                    'admin:constructModule:groupMenu:edit',
-                    'admin:constructModule:groupMenu:delete'
+                header: '操作',
+                xtype: "actioncolumn",
+                items: [
+                    {
+                        icon: "admin/resources/images/pencil.png",
+                        tooltip: '编辑',
+                        handler: 'onEdit'
+                    },
+                    {
+                        icon: "admin/resources/images/cancel.png",
+                        tooltip: '删除',
+                        handler: 'onDelete'
+                    },
+                    {
+                        icon: "admin/resources/images/group_add.png",
+                        tooltip: '添加用户',
+                        handler: 'onAddUser'
+                    }
                 ]
             }
         ]

@@ -13,6 +13,7 @@ Ext.define('kalix.pms.group.viewModel.GroupViewModel', {
         validation: {},  //验证错误信息
         icon: '',
         title: '',
+        url: CONFIG.restRoot + '/camel/rest/groups',
         view_operation: false,
         view_title: '查看组',
         add_title: '添加组',

@@ -5,6 +5,9 @@
         <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/ds)
         </jta-data-source>
         <class>cn.com.rexen.core.api.persistence.PersistentEntity</class>
+        <class>cn.com.rexen.admin.entities.UserBean</class>
+        <class>cn.com.rexen.admin.entities.RoleBean</class>
+        <class>cn.com.rexen.admin.entities.PermissionBean</class>
         <class>cn.com.vixo.group.entities.GroupBean</class>
         <class>cn.com.vixo.group.entities.GroupUserBean</class>
         <properties>

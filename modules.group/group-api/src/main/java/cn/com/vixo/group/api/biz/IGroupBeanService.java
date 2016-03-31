@@ -18,7 +18,6 @@ import java.util.List;
 public interface IGroupBeanService extends IBizService<GroupBean> {
     //在此添加新的业务方法
     List getUsersByGroupId(long groupId);
-    JsonData getUserAll();
     JsonData getUserAllAndGroupUsers(long groupId);
     JsonStatus saveGroupUsers(long groupId, String userIds);
     JsonStatus deleteGroup(long groupId);

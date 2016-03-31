@@ -54,6 +54,12 @@
             <artifactId>core-impl</artifactId>
             <version>${globle.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>cn.com.rexen.kalix.admin</groupId>
+            <artifactId>admin-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

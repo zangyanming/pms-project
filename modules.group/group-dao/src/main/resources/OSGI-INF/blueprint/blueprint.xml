@@ -11,7 +11,11 @@
     <bean id="groupBeanDaoImpl" class="cn.com.vixo.group.dao.GroupBeanDaoImpl">
         <tx:transaction method="*" value="Required"/>
     </bean>
+    <bean id="groupUserBeanDaoImpl" class="cn.com.vixo.group.dao.GroupUserBeanDaoImpl">
+        <tx:transaction method="*" value="Required"/>
+    </bean>
 
     <service interface="cn.com.vixo.group.api.dao.IGroupBeanDao" ref="groupBeanDaoImpl"/>
+    <service interface="cn.com.vixo.group.api.dao.IGroupUserBeanDao" ref="groupUserBeanDaoImpl"/>
 </blueprint>
 
