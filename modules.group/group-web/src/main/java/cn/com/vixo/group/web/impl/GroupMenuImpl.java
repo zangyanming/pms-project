@@ -46,7 +46,7 @@ public class GroupMenuImpl implements IMenu {
 
         @Override
         public String getText() {
-            return "组";
+            return "组管理";
         }
 
         @Override
