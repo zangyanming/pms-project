@@ -8,8 +8,7 @@
 Ext.define('kalix.pms.user.view.ProjectUserViewWindow', {
     extend: 'kalix.view.components.common.BaseWindow',
         requires: [
-            'kalix.pms.user.viewModel.ProjectUserViewModel',
-            'kalix.admin.user.store.UserStore'
+            'kalix.pms.user.viewModel.ProjectUserViewModel'
         ],
         alias: 'widget.userViewWindow',
         viewModel: 'userViewModel',
@@ -21,36 +20,58 @@ Ext.define('kalix.pms.user.view.ProjectUserViewWindow', {
             xtype: 'baseForm',
             items: [
                 	{
-                		fieldLabel: '项目主键id',
+                		fieldLabel: '项目名称',
                 		allowBlank: false,
                 		bind: {
-                			value: '{rec.projectId}'
+                			value: '{rec.projectName}'
                 		}
                 	},
                 	{
-                		fieldLabel: '组主键id',
+                		fieldLabel: '组名称',
                 		allowBlank: false,
                 		bind: {
-                			value: '{rec.groupId}'
+                			value: '{rec.groupName}'
                 		}
                 	},
                 	{
-                		fieldLabel: '用户主键id',
+                		fieldLabel: '用户名称',
                 		allowBlank: false,
                 		bind: {
-                			value: '{rec.userId}'
+                			value: '{rec.userName}'
                 		}
                 	},
                 	{
                 		fieldLabel: '是否是主管',
                 		allowBlank: false,
+						readOnly: true,
+						xtype: 'combobox',
+						editable: false,
+						valueField: 'isDataSupervisor',
+						displayField: 'name',
+						store: {
+							data: [
+								{'name': '是', 'isDataSupervisor': true},
+								{'name': '否', 'isDataSupervisor': false}
+							]
+						},
                 		bind: {
                 			value: '{rec.isDataSupervisor}'
                 		}
                 	},
                 	{
                 		fieldLabel: '是否分配任务',
-                		allowBlank: false,
+						allowBlank: false,
+						readOnly: true,
+						xtype: 'combobox',
+						editable: false,
+						valueField: 'isAssignTask',
+						displayField: 'name',
+						store: {
+							data: [
+								{'name': '是', 'isAssignTask': true},
+								{'name': '否', 'isAssignTask': false}
+							]
+						},
                 		bind: {
                 			value: '{rec.isAssignTask}'
                 		}

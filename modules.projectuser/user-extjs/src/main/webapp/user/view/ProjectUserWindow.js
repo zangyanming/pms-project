@@ -9,13 +9,16 @@ Ext.define('kalix.pms.user.view.ProjectUserWindow', {
     requires: [
         'kalix.pms.user.viewModel.ProjectUserViewModel',
         'kalix.controller.BaseWindowController',
-        'kalix.admin.user.store.UserStore'
+        'kalix.pms.user.store.ProjectUserStore',
+		'kalix.pms.project.component.ProjectComboBox',
+		'kalix.pms.group.component.GroupComboBox',
+		'kalix.admin.user.component.UserComboBox'
     ],
     alias: 'widget.userWindow',
     viewModel: 'userViewModel',
     controller: {
         type: 'baseWindowController',
-        storeId: 'userStore'
+        storeId: 'projectUserStore'
     },
     xtype: "userWindow",
     width: 400,
@@ -26,22 +29,26 @@ Ext.define('kalix.pms.user.view.ProjectUserWindow', {
         xtype: 'baseForm',
         items: [
             	{
-            		fieldLabel: '项目主键id',
+					xtype: 'projectComboBox',
+					fieldLabel: '项目名称',
+					name:'projectId',
             		allowBlank: false,
             		bind: {
             			value: '{rec.projectId}'
             		}
             	},
             	{
-            		fieldLabel: '组主键id',
+					xtype: 'groupComboBox',
+					fieldLabel: '组名称',
             		allowBlank: false,
             		bind: {
             			value: '{rec.groupId}'
             		}
             	},
             	{
-            		fieldLabel: '用户主键id',
-            		allowBlank: false,
+					xtype: 'userCombobox',
+					valueField: 'id',
+					fieldLabel: '用户名称',
             		bind: {
             			value: '{rec.userId}'
             		}
@@ -49,14 +56,36 @@ Ext.define('kalix.pms.user.view.ProjectUserWindow', {
             	{
             		fieldLabel: '是否是主管',
             		allowBlank: false,
+					xtype: 'combobox',
+					editable: false,
+					valueField: 'isDataSupervisor',
+					displayField: 'name',
+					//fieldStyle: 'font-size:15px;text-align:center;background:transparent;',
+					store: {
+						data: [
+							{'name': '是', 'isDataSupervisor': true},
+							{'name': '否', 'isDataSupervisor': false}
+						]
+					},
             		bind: {
             			value: '{rec.isDataSupervisor}'
             		}
             	},
             	{
             		fieldLabel: '是否分配任务',
-            		allowBlank: false,
-            		bind: {
+					allowBlank: false,
+					xtype: 'combobox',
+					editable: false,
+					valueField: 'isAssignTask',
+					displayField: 'name',
+					//fieldStyle: 'font-size:15px;text-align:center;background:transparent;',
+					store: {
+						data: [
+							{'name': '是', 'isAssignTask': true},
+							{'name': '否', 'isAssignTask': false}
+						]
+					},
+					bind: {
             			value: '{rec.isAssignTask}'
             		}
             	}

@@ -13,13 +13,13 @@ Ext.define('kalix.pms.user.view.ProjectUserGrid', {
     xtype: 'userGridPanel',
     controller: {
         type: 'userGridController',
-        storeId: 'userStore',
+        storeId: 'projectUserStore',
         cfgForm: 'kalix.pms.user.view.ProjectUserWindow',
         cfgViewForm: 'kalix.pms.user.view.ProjectUserViewWindow',
         cfgModel: 'kalix.pms.user.model.ProjectUserModel'
     },
     store: {
-        type: 'userStore'
+        type: 'projectUserStore'
     },
 
     //todo 在此修改grid显示列
@@ -41,15 +41,15 @@ Ext.define('kalix.pms.user.view.ProjectUserGrid', {
             },
             {
                 text: '项目名称',
-                dataIndex: 'projectId'
+                dataIndex: 'projectName'
             },
             {
                 text: '组名称',
-                dataIndex: 'groupId'
+                dataIndex: 'groupName'
             },
             {
                 text: '用户',
-                dataIndex: 'userId'
+                dataIndex: 'userName'
             },
             {
                 text: '是否是主管',

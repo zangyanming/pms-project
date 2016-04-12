@@ -7,8 +7,8 @@
 Ext.define('kalix.pms.user.store.ProjectUserStore', {
     extend: 'kalix.store.BaseStore',
     model: 'kalix.pms.user.model.ProjectUserModel',
-    alias: 'store.userStore',
-    xtype: 'userStore',
-    storeId: "userStore",
-    proxyUrl: '/kalix/camel/rest/users'
+    alias: 'store.projectUserStore',
+    xtype: 'projectUserStore',
+    storeId: "projectUserStore",
+    proxyUrl: CONFIG.restRoot + '/camel/rest/projectUsers'
 });

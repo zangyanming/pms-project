@@ -65,19 +65,19 @@ public class ProjectUserBean extends PersistentEntity {
         this.userId = userId;
     }
 
-    public boolean isDataSupervisor() {
+    public boolean isIsDataSupervisor() {
         return isDataSupervisor;
     }
 
-    public void setDataSupervisor(boolean dataSupervisor) {
+    public void setIsDataSupervisor(boolean dataSupervisor) {
         isDataSupervisor = dataSupervisor;
     }
 
-    public boolean isAssignTask() {
+    public boolean isIsAssignTask() {
         return isAssignTask;
     }
 
-    public void setAssignTask(boolean assignTask) {
+    public void setIsAssignTask(boolean assignTask) {
         isAssignTask = assignTask;
     }
 }

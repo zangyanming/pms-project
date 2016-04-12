@@ -6,20 +6,20 @@
 
     <reference id="userService" interface="cn.com.vixo.user.api.biz.IProjectUserBeanService"/>
 
-    <camelContext id="userCamel" xmlns="http://camel.apache.org/schema/blueprint">
+    <camelContext id="projectUserCamel" xmlns="http://camel.apache.org/schema/blueprint">
 
         <restConfiguration component="servlet" bindingMode="json">
             <dataFormatProperty key="prettyPrint" value="true"/>
         </restConfiguration>
 
         <!-- defines the rest services using the context-path /user -->
-        <rest path="/users" consumes="application/json;charset=utf-8" produces="application/json;charset=utf-8">
+        <rest path="/projectUsers" consumes="application/json;charset=utf-8" produces="application/json;charset=utf-8">
             <description>user rest service</description>
 
             <!-- this is a rest GET to find all user -->
-            <get id="route-getAllProjectUser" outType="cn.com.rexen.core.api.persistence.JsonData">
+            <get id="route-getAllProjectUser" outType="java.util.List">
                 <description>Find all ProjectUsers</description>
-                <to uri="bean:userService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr})"/>
+                <to uri="bean:userService?method=getAll(${header.page},${header.limit},${header.jsonStr})"/>
             </get>
 
             <!-- this is a rest POST to create a user -->
@@ -30,9 +30,9 @@
             </post>
 
             <!-- this is a rest GET to view a user by the given id -->
-            <get uri="/{id}" id="route-getProjectUser" outType="cn.com.vixo.user.entities.ProjectUserBean">
+            <get uri="/{id}" id="route-getProjectUser" outType="cn.com.vixo.user.api.query.ProjectUserDTO">
                 <description>Find ProjectUser by id</description>
-                <to uri="bean:userService?method=getEntity(${header.id})"/>
+                <to uri="bean:userService?method=getProjectUser(${header.id})"/>
             </get>
 
             <!-- this is a rest PUT to update a user -->

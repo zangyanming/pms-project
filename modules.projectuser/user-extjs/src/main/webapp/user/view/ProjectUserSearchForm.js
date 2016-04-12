@@ -7,10 +7,13 @@ Ext.define('kalix.pms.user.view.ProjectUserSearchForm', {
     extend: 'kalix.view.components.common.BaseSearchForm',
     alias: 'widget.userSearchForm',
 	requires:[
-		'kalix.pms.project.component.ProjectComboBox'
+		'kalix.pms.project.component.ProjectComboBox',
+		'kalix.pms.group.component.GroupComboBox',
+		'kalix.admin.user.component.UserComboBox',
+		'kalix.pms.user.store.ProjectUserStore'
 	],
     xtype: 'userSearchForm',
-    storeId: 'userStore',
+    storeId: 'projectUserStore',
     items: [
     	{
 			xtype: 'projectComboBox',
@@ -18,21 +21,18 @@ Ext.define('kalix.pms.user.view.ProjectUserSearchForm', {
 			allowBlank: true,
 			name:'projectId'
     	},
-    	{
-    		xtype: 'textfield',
-    		fieldLabel: '组主键id',
-    		labelAlign: 'right',
-    		labelWidth: 60,
-    		width: 200,
-    		name: 'groupId'
+		{
+			xtype: 'groupComboBox',
+			fieldLabel: '组名称',
+			allowBlank: true,
+			name:'groupId'
     	},
-    	{
-    		xtype: 'textfield',
-    		fieldLabel: '用户主键id',
-    		labelAlign: 'right',
-    		labelWidth: 60,
-    		width: 200,
-    		name: 'userId'
+		{
+			xtype: 'userCombobox',
+			fieldLabel: '用户名称',
+			valueField: 'id',
+			allowBlank: true,
+			name:'userId'
     	}
     ]
 });

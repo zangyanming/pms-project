@@ -11,7 +11,7 @@ Ext.define('kalix.pms.user.Main', {
         'kalix.pms.user.view.ProjectUserSearchForm',
         'kalix.pms.user.viewModel.ProjectUserViewModel'
     ],
-    storeId: 'userStore',
+    storeId: 'projectUserStore',
     viewModel: 'userViewModel',
     items: [
         {

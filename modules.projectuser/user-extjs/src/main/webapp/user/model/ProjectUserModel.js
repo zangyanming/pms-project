@@ -13,14 +13,27 @@ Ext.define('kalix.pms.user.model.ProjectUserModel', {
     fields: [
         {
             name: 'projectId'
-        }, {
+        },
+        {
+            name: 'projectName'
+        },
+        {
             name: 'groupId'
-        }, {
+        },
+        {
+            name: 'groupName'
+        },
+        {
             name: 'userId'
-        }, {
+        },
+        {
+            name: 'userName'
+        },
+        {
             name: 'isDataSupervisor',
             type: 'boolean'
-        }, {
+        },
+        {
             name: 'isAssignTask',
             type: 'boolean'
         }
