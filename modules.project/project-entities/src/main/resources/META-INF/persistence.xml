@@ -6,6 +6,8 @@
         </jta-data-source>
         <class>cn.com.rexen.core.api.persistence.PersistentEntity</class>
         <class>cn.com.vixo.project.entities.ProjectBean</class>
+        <class>cn.com.vixo.group.entities.GroupBean</class>
+        <class>cn.com.rexen.admin.entities.UserBean</class>
         <properties>
             <property name="openjpa.BrokerImpl" value="non-finalizing"/>
             <property name="openjpa.Sequence" value="table(Table=OPENJPASEQ, Increment=100)"/>

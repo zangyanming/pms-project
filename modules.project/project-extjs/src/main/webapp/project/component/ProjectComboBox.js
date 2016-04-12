@@ -1,6 +1,6 @@
 /**
- * 合同选择下拉comboBox
- * @author chenyanxu
+ * 项目选择下拉comboBox
+ * @author zangyanming
  */
 Ext.define('kalix.pms.project.component.ProjectComboBox', {
     extend: 'kalix.view.components.common.BaseComboBox',
