@@ -11,5 +11,5 @@ Ext.define('kalix.pms.standard.store.StandardStore', {
     model: 'kalix.pms.standard.model.StandardModel',
     autoLoad:true,
     storeId: "standardStore",
-    proxyUrl: '/kalix/camel/rest/standards'
+    proxyUrl: CONFIG.restRoot + '/camel/rest/standards'
 });
