@@ -20,6 +20,6 @@ Ext.define('kalix.pms.group.viewModel.GroupViewModel', {
         edit_title: '修改组',
         add_image_path: '/kalix/app/pms/group/resources/images/group_add.png',
         view_image_path: '/kalix/app/pms/group/resources/images/group_view.png',
-        edit_image_path: '/kalix/app/pms/group/resources/images/group_edit.png',
+        edit_image_path: '/kalix/app/pms/group/resources/images/group_edit.png'
     }
 });
