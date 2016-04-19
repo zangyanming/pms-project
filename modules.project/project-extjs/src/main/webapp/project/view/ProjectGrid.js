@@ -91,7 +91,7 @@ Ext.define('kalix.pms.project.view.ProjectGrid', {
                         }
                     },
                     {
-                        icon: "attachment/resources/images/attachment_manage.png",
+                        iconCls: "fa fa-file-text",
                         permission: '',
                         tooltip: '项目规范',
                         handler: 'onAttachmentManage'

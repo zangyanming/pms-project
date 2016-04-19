@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+    <reference id="planService" interface="cn.com.vixo.plan.api.biz.IPlanBeanService"/>
+
+    <camelContext id="planCamel" xmlns="http://camel.apache.org/schema/blueprint">
+        <restConfiguration component="servlet" bindingMode="json">
+            <dataFormatProperty key="prettyPrint" value="true"/>
+        </restConfiguration>
+
+        <!-- defines the rest services using the context-path /plan -->
+        <rest path="/plans" consumes="application/json;charset=utf-8" produces="application/json;charset=utf-8">
+            <description>plan rest service</description>
+
+            <!--&lt;!&ndash; this is a rest GET to find all plan &ndash;&gt;-->
+            <!--<get id="route-getAllByProjectId" uri="/projectId" outType="cn.com.vixo.plan.api.query.PlanDTO">-->
+                <!--<description>Find all Plans</description>-->
+                <!--<to uri="bean:planService?method=getAllByProjectId(${header.projectId})"/>-->
+            <!--</get>-->
+
+            <!-- this is a rest POST to create a plan -->
+            <post id="route-addPlan" type="cn.com.vixo.plan.entities.PlanBean"
+                  outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Create a Plan</description>
+                <to uri="bean:planService?method=saveEntity"/>
+            </post>
+
+            <!-- this is a rest GET to view a plan by the given id -->
+            <get uri="/{id}" id="route-getPlan" outType="cn.com.vixo.plan.entities.PlanBean">
+                <description>Find Plan by id</description>
+                <to uri="bean:planService?method=getEntity(${header.id})"/>
+            </get>
+            <!-- this is a rest GET to view a plan by the given id -->
+            <get id="route-getAllTreePlans" uri="/treePlans" outType="cn.com.vixo.plan.api.query.PlanDTO">
+                <description>Find Plan by id</description>
+                <to uri="bean:planService?method=getAllPlans(${header.jsonStr})"/>
+            </get>
+            <get id="route-getAllPlans" outType="cn.com.rexen.core.api.persistence.JsonData">
+                <description>Find all Plans</description>
+                <to uri="bean:planService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr})"/>
+            </get>
+
+            <!-- this is a rest PUT to update a plan -->
+            <put uri="/{id}" id="route-updatePlan" type="cn.com.vixo.plan.entities.PlanBean" outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Updates a Plan</description>
+                <to uri="bean:planService?method=updateEntity"/>
+            </put>
+
+            <!-- this is a rest DELETE to delete a plan -->
+            <delete uri="/{id}" id="route-deletePlan" outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Delete a Plan</description>
+                <to uri="bean:planService?method=deleteEntity(${header.id})"/>
+            </delete>
+
+        </rest>
+    </camelContext>
+</blueprint>
