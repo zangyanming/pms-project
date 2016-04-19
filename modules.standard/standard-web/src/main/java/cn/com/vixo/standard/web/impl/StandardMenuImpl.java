@@ -35,13 +35,13 @@ public class StandardMenuImpl implements IMenu {
 
         @Override
         public int getIndex() {
-            return 10;
+            return 20;
         }
 
 
         @Override
         public String getIconCls() {
-            return "x-fa fa-cutlery";
+            return "fa fa-file-text";
         }
 
         @Override

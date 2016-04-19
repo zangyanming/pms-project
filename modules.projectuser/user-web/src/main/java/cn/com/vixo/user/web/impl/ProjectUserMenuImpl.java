@@ -35,13 +35,13 @@ public class ProjectUserMenuImpl implements IMenu {
 
         @Override
         public int getIndex() {
-            return 10;
+            return 30;
         }
 
 
         @Override
         public String getIconCls() {
-            return "x-fa fa-cutlery";
+            return "fa fa-user";
         }
 
         @Override

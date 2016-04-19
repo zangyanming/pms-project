@@ -1,8 +1,8 @@
-package cn.com.vixo.project.web.impl.menu;
+package cn.com.vixo.plan.web.impl;
 
 import cn.com.rexen.core.api.web.IMenu;
 
-public class ProjectMenuImpl implements IMenu {
+public class PlanMenuImpl implements IMenu {
     @Override
         public boolean isLeaf() {
             return true;
@@ -20,12 +20,12 @@ public class ProjectMenuImpl implements IMenu {
 
         @Override
         public String getId() {
-            return "projectMenu";
+            return "planMenu";
         }
 
         @Override
         public String getDescription() {
-            return "项目管理";
+            return "项目计划";
         }
 
         @Override
@@ -35,27 +35,27 @@ public class ProjectMenuImpl implements IMenu {
 
         @Override
         public int getIndex() {
-            return 10;
+            return 40;
         }
 
 
         @Override
         public String getIconCls() {
-            return "fa fa-camera-retro fa-2x";
+            return "fa fa-clock-o";
         }
 
         @Override
         public String getText() {
-            return "项目管理";
+            return "项目计划";
         }
 
         @Override
         public String getRouteId() {
-            return "pms/project";
+            return "pms/plan";
         }
 
         @Override
         public String getPermission() {
-            return "pms:projectModule:projectMenu";
+            return "pms:projectModule:planMenu";
         }
 }
