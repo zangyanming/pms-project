@@ -4,4 +4,4 @@
 
 Bundle-Activator: ${bundle.namespace}.internal.InitActivator
 Import-Package:javax.persistence,cn.com.vixo.plan.dao,*
-Bundle-Category: Rexen  Pms Plan
+Bundle-Category: Vixo Pms Plan

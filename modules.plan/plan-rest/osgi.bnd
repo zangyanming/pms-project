@@ -4,4 +4,4 @@
 
 Bundle-Activator: ${bundle.namespace}.internal.InitActivator
 Import-Package:cn.com.rexen.core.api.biz,cn.com.rexen.core.api.persistence,cn.com.vixo.plan.entities,cn.com.vixo.plan.api.query,*
-Bundle-Category: Rexen  Pms Plan
+Bundle-Category: Vixo Pms Plan
