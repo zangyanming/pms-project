@@ -1,0 +1,7 @@
+#-----------------------------------------------------------------
+# Use this file to add customized Bnd instructions for the bundle
+#-----------------------------------------------------------------
+
+Bundle-Activator: ${bundle.namespace}.internal.InitActivator
+Import-Package:cn.com.rexen.core.api.biz,cn.com.rexen.core.api.persistence,cn.com.vixo.issue.entities,cn.com.vixo.issue.api.query,*
+Bundle-Category: Vixo Pms Issue
