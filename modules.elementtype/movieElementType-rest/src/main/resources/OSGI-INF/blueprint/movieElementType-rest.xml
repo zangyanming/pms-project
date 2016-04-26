@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+    <reference id="movieElementTypeService" interface="cn.com.vixo.movie.api.biz.IMovieElementTypeBeanService"/>
+
+    <camelContext id="movieElementTypeCamel" xmlns="http://camel.apache.org/schema/blueprint">
+
+        <restConfiguration component="servlet" bindingMode="json">
+            <dataFormatProperty key="prettyPrint" value="true"/>
+        </restConfiguration>
+
+        <!-- defines the rest services using the context-path /movieElementType -->
+        <rest path="/movieElementTypes" consumes="application/json;charset=utf-8" produces="application/json;charset=utf-8">
+            <description>movieElementType rest service</description>
+
+            <!-- this is a rest GET to find all movieElementType -->
+            <get id="route-getAllMovieElementType" outType="cn.com.rexen.core.api.persistence.JsonData">
+                <description>Find all MovieElementTypes</description>
+                <to uri="bean:movieElementTypeService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr})"/>
+            </get>
+
+            <!-- this is a rest POST to create a movieElementType -->
+            <post id="route-addMovieElementType" type="cn.com.vixo.movie.entities.MovieElementTypeBean"
+                  outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Create a MovieElementType</description>
+                <to uri="bean:movieElementTypeService?method=saveEntity"/>
+            </post>
+
+            <!-- this is a rest GET to view a movieElementType by the given id -->
+            <get uri="/{id}" id="route-getMovieElementType" outType="cn.com.vixo.movie.entities.MovieElementTypeBean">
+                <description>Find MovieElementType by id</description>
+                <to uri="bean:movieElementTypeService?method=getEntity(${header.id})"/>
+            </get>
+
+            <!-- this is a rest PUT to update a movieElementType -->
+            <put uri="/{id}" id="route-updateMovieElementType" type="cn.com.vixo.movie.entities.MovieElementTypeBean"
+                 outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Updates a MovieElementType</description>
+                <to uri="bean:movieElementTypeService?method=updateEntity"/>
+            </put>
+
+            <!-- this is a rest DELETE to delete a movieElementType -->
+            <delete uri="/{id}" id="route-deleteMovieElementType"
+                outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Delete a MovieElementType</description>
+                <to uri="bean:movieElementTypeService?method=deleteEntity(${header.id})"/>
+            </delete>
+
+        </rest>
+    </camelContext>
+</blueprint>

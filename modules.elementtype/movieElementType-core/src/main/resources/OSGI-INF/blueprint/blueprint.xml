@@ -1,0 +1,20 @@
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+">
+
+    <service id="movieElementTypeBeanService" interface="cn.com.vixo.movie.api.biz.IMovieElementTypeBeanService"
+             ref="beanServiceImpl">
+    </service>
+
+    <bean id="beanServiceImpl" class="cn.com.vixo.movie.core.biz.MovieElementTypeBeanServiceImpl">
+        <property name="dao" ref="movieElementTypeBeanDao"/>
+        <property name="shiroService" ref="shiroService"/>
+        <property name="projectBeanService" ref="projectBeanService"/>
+    </bean>
+
+    <reference id="movieElementTypeBeanDao" interface="cn.com.vixo.movie.api.dao.IMovieElementTypeBeanDao"/>
+    <reference id="shiroService" interface="cn.com.rexen.core.api.security.IShiroService"/>
+    <reference id="projectBeanService" interface="cn.com.vixo.project.api.biz.IProjectBeanService"/>
+</blueprint>
+
