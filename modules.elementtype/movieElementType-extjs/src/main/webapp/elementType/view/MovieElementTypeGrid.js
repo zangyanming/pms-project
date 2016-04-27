@@ -40,6 +40,7 @@ Ext.define('kalix.pms.elementType.view.MovieElementTypeGrid', {
                 hidden: true
             },
             {
+                hidden:true,
                 text: '项目名称',
                 dataIndex: 'projectName'
             },
