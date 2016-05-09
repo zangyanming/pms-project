@@ -25,7 +25,7 @@ public class MovieElementTypeMenuImpl implements IMenu {
 
         @Override
         public String getDescription() {
-            return "影片元素类型管理";
+            return "元素进度";
         }
 
         @Override
@@ -46,7 +46,7 @@ public class MovieElementTypeMenuImpl implements IMenu {
 
         @Override
         public String getText() {
-            return "影片元素类型管理";
+            return "元素进度";
         }
 
         @Override
