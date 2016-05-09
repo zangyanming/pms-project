@@ -20,5 +20,11 @@
         <module>modules.group</module>
         <module>modules.projectuser</module>
         <module>modules.plan</module>
+        <module>modules.issue</module>
+        <module>modules.elementtype</module>
+        <module>modules.element</module>
+        <module>modules.episode</module>
+        <module>modules.field</module>
+        <module>modules.continuity</module>
     </modules>
 </project>
