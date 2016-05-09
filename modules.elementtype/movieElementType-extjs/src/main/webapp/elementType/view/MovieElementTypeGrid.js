@@ -11,6 +11,7 @@ Ext.define('kalix.pms.elementType.view.MovieElementTypeGrid', {
     ],
     alias: 'widget.movieElementTypeGrid',
     xtype: 'movieElementTypeGridPanel',
+    autoLoad: false,
     controller: {
         type: 'movieElementTypeGridController',
         storeId: 'movieElementTypeStore',
@@ -21,7 +22,7 @@ Ext.define('kalix.pms.elementType.view.MovieElementTypeGrid', {
     store: {
         type: 'movieElementTypeStore'
     },
-
+    listeners:{itemclick:'itemclick'},
     //todo 在此修改grid显示列
     columns: {
         defaults: {flex: 1, renderer: 'addTooltip'},

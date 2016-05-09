@@ -17,14 +17,6 @@ Ext.define('kalix.pms.elementType.view.MovieElementTypeSearchForm', {
             fieldLabel: '项目名称',
             allowBlank: true,
             name:'projectId'
-        },
-        {
-            xtype: 'textfield',
-            fieldLabel: '元素类别',
-            labelAlign: 'right',
-            labelWidth: 60,
-            width: 200,
-            name: 'movieElementsType'
         }
     ]
 });

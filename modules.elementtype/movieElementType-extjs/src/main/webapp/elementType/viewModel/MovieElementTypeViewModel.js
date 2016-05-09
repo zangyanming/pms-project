@@ -17,8 +17,8 @@ Ext.define('kalix.pms.elementType.viewModel.MovieElementTypeViewModel', {
         view_title: '查看影片元素类型',
         add_title: '添加影片元素类型',
         edit_title: '修改影片元素类型',
-        add_image_path: '/kalix/app/pms/movieElementType/resources/images/elementType_add.png',
-        view_image_path: '/kalix/app/pms/movieElementType/resources/images/elementType_view.png',
-        edit_image_path: '/kalix/app/pms/movieElementType/resources/images/elementType_edit.png'
+        add_image_path: '/kalix/app/pms/elementType/resources/images/elementType_add.png',
+        view_image_path: '/kalix/app/pms/elementType/resources/images/elementType_view.png',
+        edit_image_path: '/kalix/app/pms/elementType/resources/images/elementType_edit.png'
     }
 });

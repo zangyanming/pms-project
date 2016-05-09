@@ -10,6 +10,7 @@ Ext.define('kalix.pms.elementType.store.MovieElementTypeStore', {
     alias: 'store.movieElementTypeStore',
     xtype: 'movieElementTypeStore',
     storeId: "movieElementTypeStore",
+    autoLoad: false,
     proxyUrl: '/kalix/camel/rest/movieElementTypes',
     pageSize:50
 });

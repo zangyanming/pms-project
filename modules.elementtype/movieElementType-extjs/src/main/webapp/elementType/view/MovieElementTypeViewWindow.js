@@ -37,9 +37,5 @@ Ext.define('kalix.pms.elementType.view.MovieElementTypeViewWindow', {
                 }
             }
         ]
-    }
-
-    ]
-
-
+    }]
 });
