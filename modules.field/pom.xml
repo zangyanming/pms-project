@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pms-project</artifactId>
+        <groupId>cn.com.vixo.pms</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.vixo.pms.field</groupId>
+    <artifactId>modules.field</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <bundle.symbolicName>cn.com.vixo.field</bundle.symbolicName>
+        <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
+    </properties>
+    <packaging>pom</packaging>
+    <modules>
+        <module>field-entities</module>
+        <module>field-api</module>
+        <module>field-dao</module>
+        <module>field-core</module>
+        <module>field-rest</module>
+        <module>field-web</module>
+        <module>field-extjs</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.com.rexen.kalix.poms</groupId>
+                <artifactId>poms-dm</artifactId>
+                <version>${globle.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.vixo.pms.group.api</groupId>
+                <artifactId>group-api</artifactId>
+                <version>${globle.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.com.rexen.kalix.core</groupId>
+            <artifactId>core-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.com.rexen.kalix.core</groupId>
+            <artifactId>core-impl</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.com.rexen.kalix.core</groupId>
+            <artifactId>core-util</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+    </dependencies>
+</project>

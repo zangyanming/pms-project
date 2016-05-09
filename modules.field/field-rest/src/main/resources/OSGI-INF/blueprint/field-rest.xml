@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+    <reference id="fieldService" interface="cn.com.vixo.field.api.biz.IFieldBeanService"/>
+
+    <camelContext id="fieldCamel" xmlns="http://camel.apache.org/schema/blueprint">
+
+        <restConfiguration component="servlet" bindingMode="json">
+            <dataFormatProperty key="prettyPrint" value="true"/>
+        </restConfiguration>
+
+        <!-- defines the rest services using the context-path /field -->
+        <rest path="/fields" consumes="application/json;charset=utf-8" produces="application/json;charset=utf-8">
+            <description>field rest service</description>
+
+            <!-- this is a rest GET to find all field -->
+            <get id="route-getAllField" outType="cn.com.rexen.core.api.persistence.JsonData">
+                <description>Find all Fields</description>
+                <to uri="bean:fieldService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr})"/>
+            </get>
+
+            <!-- this is a rest POST to create a field -->
+            <post id="route-addField" type="cn.com.vixo.field.entities.FieldBean"
+                  outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Create a Field</description>
+                <to uri="bean:fieldService?method=saveEntity"/>
+            </post>
+
+            <!-- this is a rest GET to view a field by the given id -->
+            <get uri="/{id}" id="route-getField" outType="cn.com.vixo.field.entities.FieldBean">
+                <description>Find Field by id</description>
+                <to uri="bean:fieldService?method=getEntity(${header.id})"/>
+            </get>
+
+            <!-- this is a rest PUT to update a field -->
+            <put uri="/{id}" id="route-updateField" type="cn.com.vixo.field.entities.FieldBean"
+                 outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Updates a Field</description>
+                <to uri="bean:fieldService?method=updateEntity"/>
+            </put>
+
+            <!-- this is a rest DELETE to delete a field -->
+            <delete uri="/{id}" id="route-deleteField"
+                outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Delete a Field</description>
+                <to uri="bean:fieldService?method=deleteEntity(${header.id})"/>
+            </delete>
+
+        </rest>
+    </camelContext>
+</blueprint>
