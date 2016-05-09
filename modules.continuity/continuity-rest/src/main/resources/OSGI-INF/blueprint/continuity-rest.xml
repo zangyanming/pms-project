@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+    <reference id="continuityService" interface="cn.com.vixo.continuity.api.biz.IContinuityBeanService"/>
+
+    <camelContext id="continuityCamel" xmlns="http://camel.apache.org/schema/blueprint">
+
+        <restConfiguration component="servlet" bindingMode="json">
+            <dataFormatProperty key="prettyPrint" value="true"/>
+        </restConfiguration>
+
+        <!-- defines the rest services using the context-path /continuity -->
+        <rest path="/continuitys" consumes="application/json;charset=utf-8" produces="application/json;charset=utf-8">
+            <description>continuity rest service</description>
+
+            <!-- this is a rest GET to find all continuity -->
+            <get id="route-getAllContinuity" outType="cn.com.rexen.core.api.persistence.JsonData">
+                <description>Find all Continuitys</description>
+                <to uri="bean:continuityService?method=getAllEntityByQuery(${header.page},${header.limit},${header.jsonStr})"/>
+            </get>
+
+            <!-- this is a rest POST to create a continuity -->
+            <post id="route-addContinuity" type="cn.com.vixo.continuity.entities.ContinuityBean"
+                  outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Create a Continuity</description>
+                <to uri="bean:continuityService?method=saveEntity"/>
+            </post>
+
+            <!-- this is a rest GET to view a continuity by the given id -->
+            <get uri="/{id}" id="route-getContinuity" outType="cn.com.vixo.continuity.entities.ContinuityBean">
+                <description>Find Continuity by id</description>
+                <to uri="bean:continuityService?method=getEntity(${header.id})"/>
+            </get>
+
+            <!-- this is a rest PUT to update a continuity -->
+            <put uri="/{id}" id="route-updateContinuity" type="cn.com.vixo.continuity.entities.ContinuityBean"
+                 outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Updates a Continuity</description>
+                <to uri="bean:continuityService?method=updateEntity"/>
+            </put>
+
+            <!-- this is a rest DELETE to delete a continuity -->
+            <delete uri="/{id}" id="route-deleteContinuity"
+                outType="cn.com.rexen.core.api.biz.JsonStatus">
+                <description>Delete a Continuity</description>
+                <to uri="bean:continuityService?method=deleteEntity(${header.id})"/>
+            </delete>
+
+        </rest>
+    </camelContext>
+</blueprint>
