@@ -24,8 +24,6 @@ import java.util.Map;
  * @修改备注：
  */
 public class MovieElementTypeBeanServiceImpl extends ShiroGenericBizServiceImpl<IMovieElementTypeBeanDao, MovieElementTypeBean> implements IMovieElementTypeBeanService {
-    private JsonStatus jsonStatus = new JsonStatus();
-
     public MovieElementTypeBeanServiceImpl() {
         super.init(MovieElementTypeBean.class.getName());
     }
@@ -67,5 +65,4 @@ public class MovieElementTypeBeanServiceImpl extends ShiroGenericBizServiceImpl<
 
         return jsonData;
     }
-
 }
